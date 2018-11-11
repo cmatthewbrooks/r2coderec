@@ -11,8 +11,6 @@ import base64
 
 import r2pipe
 from r2utils import R2PipeUtility as r2pu
-from r2utils import R2FuncUtility as r2fu
-from r2utils import R2FlagUtility as r2flu
 
 class Matcher:
     '''
@@ -50,12 +48,6 @@ class Matcher:
                     funchash in set(file_hashes.values())):
 
                     self.r2.cmd('s ' + funcname)
-
-                    self.r2.cmd('fs ' + r2flu.R2KIT_ANALYZED_FS)
-                    self.r2.cmd('f ' + r2flu.R2KIT_ANALYZED_FLAG)
-
-                    self.r2.cmd('fs ' + r2flu.LIBRARY_CODE_FS)
-                    self.r2.cmd('f ' + r2flu.LIBRARY_CODE_FLAG)
 
                     self.r2.cmd(
                         'afn ' + self.get_dict_key_from_value(
