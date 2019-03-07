@@ -8,6 +8,8 @@ def main():
     
     parser = argparse.ArgumentParser()
 
+
+
     subparsers = parser.add_subparsers(help='Commands')
 
     make_parser = subparsers.add_parser('make',help='Make signatures')
@@ -26,9 +28,12 @@ def main():
     match_parser.add_argument('--target',
         help='A target binary if not inside an r2 session')
 
+
+
     args = parser.parse_args()
     
-    
+
+
     if args.mode == 'make':
         m = Maker()
     elif args.mode == 'match':
