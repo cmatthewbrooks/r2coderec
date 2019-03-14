@@ -1,8 +1,8 @@
 import os
 import argparse
 
-from modules.maker import Maker as Maker
-from modules.matcher import Matcher as Matcher
+from core.maker import Maker as Maker
+from core.matcher import Matcher as Matcher
 
 def main():
     
