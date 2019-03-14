@@ -1,0 +1,3 @@
+# Ignore egg-info for "python setup.py develop" symlink
+
+*.egg-info/
