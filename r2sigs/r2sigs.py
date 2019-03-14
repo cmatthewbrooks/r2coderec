@@ -5,40 +5,82 @@ from core.maker import Maker as Maker
 from core.matcher import Matcher as Matcher
 
 def main():
+
+    about = ('r2sigs: a framework for handling function '
+             'signatures in disassembly')
     
-    parser = argparse.ArgumentParser()
+    parser = argparse.ArgumentParser(
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        description = about,
+        epilog = '''
+
+Examples:
+
+    - Make zighash signatures from a target directory:
+
+        $ %(prog)s make --sigtype zighash --target /path/to/dir
+
+        '''
+    
+    )
 
 
 
-    subparsers = parser.add_subparsers(help='Commands')
+    subparsers = parser.add_subparsers(title='commands', dest='command')
 
-    make_parser = subparsers.add_parser('make',help='Make signatures')
-    make_parser.set_defaults(mode='make')
+    make = subparsers.add_parser(
+        'make',
+        help = 'Make signatures from location'
+    )
 
-    make_parser.add_argument('--sigtype',
-        help='The type of sigfile being created')
-    make_parser.add_argument('--target',
-        help='The target directory with libraries for sig making')
+    make.add_argument(
+        '--sigtype',
+        help = 'The type of function signatures being created'
+    )
+    
+    make.add_argument(
+        '--target',
+        help = 'The target directory with libraries for signature generation'
+    )
 
-    match_parser = subparsers.add_parser('match',help='Match signatures')
-    match_parser.set_defaults(mode='match')
+    make.add_argument(
+        '--siglocation',
+        help = 'A location for the signatures file (if default not desired)' 
+    )
 
-    match_parser.add_argument('--siglocation',
-        help='Specific file or directory instead of default')
-    match_parser.add_argument('--target',
-        help='A target binary if not inside an r2 session')
+
+    match = subparsers.add_parser(
+        'match',
+        help = 'Match signatures inside r2 session'
+    )
+
+    match.add_argument(
+        '--siglocation',
+        help = 'Specific file or directory (if not using default)'
+    )
+     
+    match.add_argument(
+        '--rename',
+        action = 'store_true',
+        help = ('Rename the functions inside an r2 session with matching '
+               'signature names')
+    )
 
 
 
     args = parser.parse_args()
     
+    print args
 
+    if args.command == 'make':
+       
+        m = Maker(args.sigtype, args.target, args.siglocation)
+        m.sigmake()
 
-    if args.mode == 'make':
-        m = Maker()
-    elif args.mode == 'match':
-        m = Matcher()
-
+    elif args.command == 'match':
+       
+        m = Matcher(args.siglocation)
+        m.sigmatch()
 
 
 if __name__ == '__main__':
