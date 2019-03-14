@@ -80,7 +80,7 @@ Examples:
     elif args.command == 'match':
        
         m = Matcher(args.siglocation)
-        m.sigmatch()
+        m.sigmatch(args.rename)
 
 
 if __name__ == '__main__':
