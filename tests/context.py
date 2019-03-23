@@ -9,3 +9,4 @@ sys.path.append(
     )
 )
 
+from r2sigs.core.signatures import signatures
