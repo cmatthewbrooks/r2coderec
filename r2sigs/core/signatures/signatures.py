@@ -11,11 +11,13 @@ def initialize_signature_gen_file_list():
 
     ignore = ['__init__.py','signatures.py']
 
-    for f in SIGNATURE_GEN_DIRECTORY:
+    for f in os.listdir(SIGNATURE_GEN_DIRECTORY):
         
-        SIGNATURE_GEN_FILE_LIST.append(
-            os.path.join(SIGNATURE_GEN_DIRECTORY, f)
-        )
+        if f not in ignore and f.endswith('.py'):
+            
+            SIGNATURE_GEN_FILE_LIST.append(
+                os.path.join(SIGNATURE_GEN_DIRECTORY, f)
+            )
 
 
 
