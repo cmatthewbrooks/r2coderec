@@ -3,6 +3,9 @@
 
 import unittest
 
+import test_core_utils
+import test_core_signatures
+
 loader = unittest.TestLoader()
 suite = unittest.TestSuite()
 
@@ -15,6 +18,9 @@ suite.addTests(loader.loadTestsFromModule(test_r2pfuncutil))
 suite.addTests(loader.loadTestsFromModule(test_funcstrings))
 suite.addTests(loader.loadTestsFromModule(test_funclist))
 '''
+
+suite.addTests(loader.loadTestsFromModule(test_core_utils))
+suite.addTests(loader.loadTestsFromModule(test_core_signatures))
 
 runner = unittest.TextTestRunner(verbosity=3)
 result = runner.run(suite)
