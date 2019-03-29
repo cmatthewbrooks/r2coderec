@@ -1,3 +1,5 @@
 # Ignore egg-info for "python setup.py develop" symlink
 
 *.egg-info/
+*.pyc
+*__pycache__*
