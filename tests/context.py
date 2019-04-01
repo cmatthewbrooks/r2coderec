@@ -10,4 +10,4 @@ sys.path.append(
 )
 
 import r2sigs.core.utils as utils
-from r2sigs.core.signatures import signatures
+from r2sigs.core import signatures as signatures
