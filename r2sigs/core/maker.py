@@ -4,7 +4,7 @@ import signatures
 
 class Maker:
 
-    def __init__(self, sigtype, target, siglocation):
+    def __init__(self, sigtype, target, siglocation=None):
         '''
         Inputs:
           sigtype: Type of signature to make
@@ -29,6 +29,10 @@ class Maker:
         else:
             raise Exception('Not a valid target location')
 
+        if siglocation:
+            self.siglocation = siglocation
+        else:
+            self.siglocation = signatures.DEFAULT_SIGS_DIRECTORY
 
     def sigmake(self):
         '''
