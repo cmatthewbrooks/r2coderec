@@ -11,8 +11,16 @@ class Maker:
 
         Purpose: Instantiate the class
         '''
-        print('Creating Maker...')
+        self.sigtype = None
+        self.target = None
+        self.siglocation = None
 
+        s = signatures.Signature()
+
+        if s.is_valid_sigtype(sigtype):
+            self.sigtype = sigtype
+        else:
+            raise Exception('Not a valid sigtype')
 
 
     def sigmake(self):

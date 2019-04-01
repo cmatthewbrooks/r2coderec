@@ -42,7 +42,12 @@ class Signature:
                     f[:(len(f)-len('.py'))]
                 )
 
+    def is_valid_sigtype(self, sigtype):
 
+        if sigtype in VALID_SIGTYPE_LIST:
+            return True
+        else:
+            return False
 
 def main():
     pass
