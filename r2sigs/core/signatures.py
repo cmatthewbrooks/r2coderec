@@ -1,6 +1,7 @@
 import os
 
 SIGTYPE_DIRECTORY_NAME = 'sigtypes'
+SIGS_DIRECTORY_NAME = 'sigs'
 
 SIGTYPE_DIRECTORY = os.path.join(
     os.path.abspath(
@@ -13,7 +14,11 @@ SIGTYPE_IGNORE_LIST = ['__init__.py']
 
 VALID_SIGTYPE_LIST  = []
 
-
+DEFAULT_SIGS_DIRECTORY = os.path.join(
+    os.path.abspath(
+        os.path.join(os.path.dirname(__file__),'..')
+    ), SIGS_DIRECTORY_NAME
+)
 
 class Signature:
 
