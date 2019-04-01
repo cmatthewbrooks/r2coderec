@@ -1,3 +1,5 @@
+import os
+
 import signatures
 
 class Maker:
@@ -21,6 +23,11 @@ class Maker:
             self.sigtype = sigtype
         else:
             raise Exception('Not a valid sigtype')
+
+        if os.path.exists(target):
+            self.target = target
+        else:
+            raise Exception('Not a valid target location')
 
 
     def sigmake(self):
