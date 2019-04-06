@@ -29,7 +29,7 @@ class Maker:
         else:
             raise Exception('Not a valid target location')
 
-        if siglocation:
+        if siglocation and os.path.exists(siglocation):
             self.siglocation = siglocation
         else:
             self.siglocation = signatures.DEFAULT_SIGS_DIRECTORY
