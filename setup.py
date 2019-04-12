@@ -2,21 +2,25 @@ from setuptools import setup
 
 setup(
 
-    name = 'r2sigs',
+    name = 'r2coderec',
     version = '0.1',
     author = 'cmatthewbrooks',
     author_email = 'me@cmatthewbrooks.com',
-    keywords = ['radare2'],
-    packages = ['r2sigs'],
+    keywords = [
+        'radare2',
+        'code-recognition',
+        'reverse-engineering',
+        'disassembly'
+        ],
+    packages = ['r2coderec'],
     entry_points = {
         'console_scripts': [
-        'r2sigs = r2sigs.r2sigs:main',
-        'r2autoanalyze = r2sigs.r2autoanalyze:main',
-        'r2compileranalysis = r2sigs.r2compileranalysis:main'
+        'r2coderec = r2coderec.r2sigs:main',
         ]
     },
     install_requires = [
-        'r2pipe'
+        'r2pipe',
+        'r2pyutils'
     ]
 
 )

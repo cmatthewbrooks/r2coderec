@@ -6,7 +6,7 @@ from core.matcher import Matcher as Matcher
 
 def main():
 
-    about = ('r2sigs: a framework for handling function '
+    about = ('r2sigs: Make and match function '
              'signatures in disassembly')
     
     parser = argparse.ArgumentParser(

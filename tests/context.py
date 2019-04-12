@@ -9,6 +9,6 @@ sys.path.append(
     )
 )
 
-import r2sigs.core.utils as utils
-from r2sigs.core import signatures as signatures
-from r2sigs.core import maker as maker
+import r2coderec.core.utils as utils
+from r2coderec.core import signatures as signatures
+from r2coderec.core import maker as maker

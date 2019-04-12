@@ -26,7 +26,7 @@ class TestMaker(unittest.TestCase):
         
         m = maker.Maker('zignature','.','bad_siglocation')
         
-        self.assertIn('/r2sigs/sigs', m.siglocation)
+        self.assertIn('/r2coderec/sigs', m.siglocation)
 
 if __name__ == '__main__':
     unittest.main()
