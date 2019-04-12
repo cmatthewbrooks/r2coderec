@@ -1,6 +1,6 @@
 # r2coderec - code recognize code
 A Python package to recognize build-remnants and statically-linked
-library code.
+library code in r2 disassembly.
 
 
 Note: This is currently under development being split out from
