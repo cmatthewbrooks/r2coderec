@@ -19,8 +19,7 @@ setup(
         ]
     },
     install_requires = [
-        'r2pipe',
-        'r2pyutils'
+        'r2pipe'
     ]
 
 )
